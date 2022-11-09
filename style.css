@@ -29,6 +29,16 @@ body {
     border: solid 5px #000000;
     border-radius: 10px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.display input {
+    background-color: #15251c;
+    border: none;
+    width: 100%;
+    font-size: 50px;
+    text-align: right;
 }
 
 .buttons-container{
