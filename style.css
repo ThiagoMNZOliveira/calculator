@@ -15,7 +15,7 @@ body {
 
 .calculator-container {
     width: 400px;
-    height: 550px;
+    height: 640px;
     background-color: #696969;
     border: solid 5px #000000;
     border-radius: 10px;
@@ -50,6 +50,12 @@ body {
     gap: 5px;
 }
 
+.bigger-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
 
 .bt {
     width: 85px;
@@ -61,6 +67,10 @@ body {
     font-size: 30px;
     cursor: pointer;
     box-shadow: 2px 2px 3px #000;
+}
+
+.bt-2{
+    width: 180px;
 }
 
 .bt:hover {
