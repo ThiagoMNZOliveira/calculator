@@ -7,3 +7,14 @@ function sum() {
     return sum;
 }
 
+function subtract(num1, num2) {
+    return num1 - num2;
+}
+
+function division(num1, num2) {
+    return num1 / num2;
+}
+
+function multiply(num1, num2){
+    return num1 * num2;
+}
