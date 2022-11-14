@@ -1,5 +1,5 @@
 const buttons = document.querySelector('.buttons-container');
-const display = document.querySelector('.display input');
+const display = document.querySelector('.input');
 
 
 const numbers = [];
@@ -8,7 +8,7 @@ buttons.addEventListener('click', e => {
     const button = e.target;
 
     if (button.classList.contains('num')) {
-        display.innerText += button.innerText;
+        display.value += button.innerText;
         numbers.push(button.innerText);
     }
     if (button.classList.contains('op')) {
@@ -64,6 +64,10 @@ function operate(operation) {
 
 function del(){
 
+}
+
+function clear(){
+    display.value = '';
 }
 
 console.log(operate('10+'))
