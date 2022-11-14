@@ -15,7 +15,7 @@ buttons.addEventListener('click', e => {
         operate(button.innerText);
     }
     if(button.classList.contains('del')){
-        del();
+        del(display.value);
     }
     if(button.classList.contains('clear')){
         clear();
@@ -62,8 +62,9 @@ function operate(operation) {
     }
 }
 
-function del(){
-
+function del(displayValue){
+    const newValue = displayValue.slice(0, displayValue.length - 1);
+    display.value = newValue;
 }
 
 function clear(){
