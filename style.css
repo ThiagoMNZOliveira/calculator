@@ -42,7 +42,7 @@ body {
     text-align: right;
 }
 
-.small-buttons{
+.small-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -70,7 +70,7 @@ body {
     box-shadow: 2px 2px 3px #000;
 }
 
-.bt-2{
+.bt-2 {
     width: 180px;
 }
 
@@ -78,4 +78,3 @@ body {
     background-color: #16384b;
     transition: all 200ms ease-in-out;
 }
-
