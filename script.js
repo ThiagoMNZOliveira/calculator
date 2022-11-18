@@ -1,26 +1,41 @@
 const buttons = document.querySelector('.buttons-container');
-const display = document.querySelector('.input');
+const display = document.querySelector('.text');
 
 
-const numbers = [];
+let numbers = [];
+
+
+document.addEventListener('keydown', e => {
+    const key = e.keyCode;
+
+    if(key > 47 && key < 58 || key > 95 && key < 106){
+        display.innerText += e.key;
+    }
+
+
+});
 
 buttons.addEventListener('click', e => {
     const button = e.target;
 
     if (button.classList.contains('num')) {
-        display.value += button.innerText;
-        numbers.push(button.innerText);
+        display.innerText += button.innerText;
+    }
+    if(button.classList.contains('operation')){
+        numbers.push(display.innerText);
+        display.innerText += button.innerText; 
+        console.log(numbers);
     }
     if (button.classList.contains('equals')) {
-        operate(display.value);
+        operate(display.innerText);
     }
     if (button.classList.contains('del')) {
-        del(display.value);
+        del(display.innerText);
     }
     if (button.classList.contains('clear')) {
         clear();
     }
-})
+});
 
 
 
@@ -44,7 +59,8 @@ function multiply(num1, num2) {
 
 function operate(displayValue) {
     const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
+    const valueSplit = displayValue.split(/[-+]/);
+    
 
     /* if (operation === '+') {
         add();
@@ -60,11 +76,12 @@ function operate(displayValue) {
     } */
 }
 
-function del(displayValue) {
-    const newValue = displayValue.slice(0, displayValue.length - 1);
-    display.value = newValue;
+function del(displayText) {
+    const newValue = displayText.slice(0, displayText.length - 1);
+    display.innerText = newValue;
 }
 
 function clear() {
-    display.value = '';
+    numbers = [];
+    display.innerText = '';
 }
