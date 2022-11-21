@@ -42,6 +42,12 @@ body {
     text-align: right;
 }
 
+.hold {
+    font-size: 30px;
+    position: relative;
+    bottom: 90px;
+}
+
 .small-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
