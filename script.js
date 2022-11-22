@@ -8,20 +8,23 @@ let operation;;
 
 
 document.addEventListener('keydown', e => {
-    const key = e.keyCode;
+    const key = e.key;
 
-    if (key > 47 && key < 58 || key > 95 && key < 106) {
+    if (key >= 0) {
         display.innerText += e.key;
     }
-    if (key == 8) {
+    if (key == 'Backspace') {
         del(display.innerText);
     }
-    if (key == 13) {
-        operate(display.innerText);
+    if (key == 'Enter') {
+        checkStr(display.innerText);
+        display.innerText = operate(numbers, operation);
     }
-    if (key == 107 || key == 109) {
-        numbers.push(display.innerText);
-        display.innerText += e.key;
+    if (key == '+' || key == '-') {
+        checkStr(display.innerText)
+        operation = key;
+        hold.innerText += display.innerText;
+        display.innerText = '';
     }
 });
 
@@ -32,14 +35,13 @@ buttons.addEventListener('click', e => {
         display.innerText += button.innerText;
     }
     if (button.classList.contains('operation')) {
-        numbers.push(display.innerText);
+        checkStr(display.innerText)
         operation = button.innerText;
         hold.innerText += display.innerText;
         display.innerText = '';
     }
     if (button.classList.contains('equals')) {
-        checkStr(display.innerText)
-        console.log(numbers);
+        checkStr(display.innerText);
         display.innerText = operate(numbers, operation);
     }
     if (button.classList.contains('del')) {
